@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cuatro en línea 8×7</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Cuatro en línea <span class="dim">8×7</span></h1>
+        <p class="subtitle">Juega contra el bot del Equipo 1</p>
+      </header>
+
+      <section class="controls" aria-label="Opciones de partida">
+        <fieldset class="field">
+          <legend>¿Quién abre?</legend>
+          <label><input type="radio" name="opener" value="human" checked /> Yo</label>
+          <label><input type="radio" name="opener" value="bot" /> El bot</label>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Dificultad</legend>
+          <label><input type="radio" name="level" value="normal" checked /> Normal</label>
+          <label><input type="radio" name="level" value="easy" /> Fácil</label>
+        </fieldset>
+        <div class="buttons">
+          <button id="new-game" class="btn primary" type="button">Nueva partida</button>
+          <button id="undo" class="btn" type="button" disabled>Deshacer</button>
+        </div>
+      </section>
+
+      <div id="status" class="status" role="status" aria-live="polite">
+        <span id="status-dot" class="dot"></span>
+        <span id="status-text">Elige quién abre y pulsa «Nueva partida».</span>
+      </div>
+
+      <div id="error" class="error" hidden>
+        <span id="error-text">No se pudo contactar al bot.</span>
+        <button id="retry" class="btn small" type="button">Reintentar</button>
+      </div>
+
+      <section class="board-wrap" aria-label="Tablero">
+        <div id="arrows" class="arrows" aria-hidden="true"></div>
+        <div id="board" class="board" role="grid" aria-label="Tablero de 8 columnas y 7 filas"></div>
+      </section>
+
+      <section class="legend" aria-label="Leyenda">
+        <span><span class="chip human"></span> Tú</span>
+        <span><span class="chip bot"></span> Bot</span>
+        <span id="bot-stats" class="dim"></span>
+      </section>
+
+      <section class="history">
+        <h2>Jugadas</h2>
+        <ol id="history" class="history-list"></ol>
+      </section>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
