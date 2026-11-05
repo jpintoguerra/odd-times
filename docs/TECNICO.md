@@ -85,7 +85,7 @@ El humano jugó las columnas 4 y 3, dejando dos fichas juntas abajo. El bot (pro
 | 5.1 | Un solo proceso Node para bot y web | `npm start` lanza la web en un **proceso hijo** | Detectado durante el desarrollo: la búsqueda bloquea el event loop 1.8 s; si alguien juega en la web durante el torneo, la jugada del árbitro podía atrasarse hasta un timeout |
 | 5.2 | Búsqueda sobre `board[fila][col]`; bitboards como opcional | Representación plana `Int8Array` + Zobrist (sin bitboards) | Más rápido que copiar matrices y más simple de explicar que bitboards de 64 bits en JS (requerirían BigInt o dos enteros de 32 bits) |
 | 5.3 | `parseTurn` tomaría `board` o `moves` indistintamente | Prioridad explícita a `board`/`you` | El ejemplo de las bases es inconsistente (ver Bitácora #3) |
-| 5.4 | `node_modules` en el repo local | `node_modules` en `~/.cache/ai-event` con enlace simbólico (solo en la máquina de desarrollo) | La sincronización de iCloud del Escritorio bloqueaba la lectura de archivos (Bitácora #4) |
+| 5.4 | Proyecto en el Escritorio | Proyecto movido a `~/ai-challenge`, fuera de carpetas sincronizadas | La sincronización de iCloud del Escritorio bloqueaba la lectura de `node_modules` y creaba copias de conflicto dentro de `.git` (`refs/heads/main 2`) (Bitácora #4) |
 | 5.5 | Opcionales del frontend "si sobra tiempo" | Se implementaron deshacer, historial y dificultad (fácil = profundidad 2) | Eran baratos con la API stateless |
 
 ## 6. Uso de la IA
