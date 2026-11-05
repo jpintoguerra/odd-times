@@ -1,0 +1,26 @@
+{
+  "name": "cuatro-en-linea-8x7",
+  "version": "1.0.0",
+  "description": "Bot de Cuatro en línea 8x7 para el challenge de IA + app web",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "mock": "node mock/mock-arbiter.js",
+    "bot": "node src/index.js --bot",
+    "web": "node src/index.js --web",
+    "start": "node src/index.js --bot --web"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.9",
+    "supertest": "^7.3.1",
+    "vitest": "^2.1.9"
+  }
+}
